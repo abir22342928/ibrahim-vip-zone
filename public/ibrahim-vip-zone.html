@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="theme-color" content="#05070a" />
+<title>IBRAHIM VIP ZONE — আজকের ফুটবল মাল্টি</title>
+<meta name="description" content="প্রিমিয়াম ডেইলি ফুটবল মাল্টি সার্ভিস — সিকিউর পেমেন্ট ভেরিফিকেশন, প্রোটেক্টেড মাল্টি ভল্ট ও ২৪/৭ AI সাপোর্ট।" />
+<style>
+  :root{
+    --ink-900:#05070a; --ink-800:#0a0f14; --ink-700:#0f161d; --ink-600:#16202a;
+    --lime:#b8ff2e; --turf:#12b981;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{max-width:100vw;overflow-x:hidden}
+  body{
+    font-family:'Inter','Hind Siliguri',system-ui,-apple-system,'Segoe UI',sans-serif;
+    background:
+      radial-gradient(1100px 620px at 12% -10%, rgba(18,185,129,.22), transparent 60%),
+      radial-gradient(900px 520px at 88% 0%, rgba(184,255,46,.14), transparent 55%),
+      linear-gradient(180deg,#05070a 0%,#060b10 45%,#04070a 100%);
+    color:#e8f1ef; -webkit-tap-highlight-color:transparent;
+    min-height:100vh; padding-bottom:70px;
+  }
+  a{color:inherit;text-decoration:none}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+    border-radius:14px;padding:.72rem 1.1rem;font-weight:700;font-size:.92rem;line-height:1.1;
+    transition:transform .15s ease,box-shadow .2s ease,background .2s ease;cursor:pointer;border:1px solid transparent;text-align:center;
+  }
+  .btn-primary{background:linear-gradient(135deg,#b8ff2e,#35e08b);color:#05230f;box-shadow:0 14px 34px -16px rgba(184,255,46,.9)}
+  .btn-ghost{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);color:#e8f1ef}
+  .btn-sm{padding:.45rem .8rem;font-size:.8rem;border-radius:11px}
+  .card{
+    background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.09);border-radius:20px;backdrop-filter:blur(14px);
+    box-shadow:0 18px 45px -25px rgba(0,0,0,.95);
+  }
+  .neon-edge{border:1px solid rgba(184,255,46,.45);box-shadow:0 0 0 1px rgba(184,255,46,.08),0 22px 60px -30px rgba(184,255,46,.55)}
+  .badge{display:inline-flex;align-items:center;gap:.3rem;padding:.25rem .6rem;border-radius:999px;font-size:.68rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;border:1px solid transparent;white-space:nowrap}
+  .badge-ok{background:rgba(16,185,129,.16);color:#6ee7b7;border-color:rgba(16,185,129,.4)}
+  .badge-info{background:rgba(96,165,250,.14);color:#bfdbfe;border-color:rgba(96,165,250,.35)}
+  .badge-bad{background:rgba(248,113,113,.14);color:#fca5a5;border-color:rgba(248,113,113,.4)}
+  .tiny{font-size:.75rem}.muted{color:rgba(232,241,239,.6)}
+  .section-title{font-size:1.15rem;font-weight:800;letter-spacing:-.01em}
+  .label{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.09em;font-weight:700;color:rgba(232,241,239,.55);margin-bottom:.35rem}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(6,11,15,.92);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(18px)}
+  .header-inner{max-width:1024px;margin:0 auto;display:flex;align-items:center;gap:.75rem;padding:.75rem 1rem}
+  .logo{display:flex;align-items:center;gap:.5rem;min-width:0}
+  .logo-mark{width:40px;height:40px;flex-shrink:0;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,#b8ff2e,#35e08b);font-size:22px;box-shadow:0 8px 20px -8px rgba(184,255,46,.8)}
+  .logo-name{font-weight:900;font-size:.9rem;letter-spacing:-.02em;line-height:1.1}
+  .logo-sub{font-size:.6rem;text-transform:uppercase;letter-spacing:.2em;color:var(--lime)}
+  .header-actions{margin-left:auto;display:flex;align-items:center;gap:.4rem}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(180deg, rgba(5,7,10,.4), rgba(5,7,10,.85)), radial-gradient(700px 400px at 50% -20%, rgba(184,255,46,.18), transparent 60%)}
+  .hero-inner{max-width:1024px;margin:0 auto;padding:2rem 1rem 1.5rem;text-align:center}
+  .hero h1{font-size:1.9rem;font-weight:900;letter-spacing:-.02em;line-height:1.15}
+  .hero .price{display:block;font-size:2.4rem;font-weight:900;background:linear-gradient(90deg,#b8ff2e,#35e08b);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{max-width:560px;margin:.6rem auto 0;font-size:.9rem;color:rgba(232,241,239,.65)}
+
+  main{max-width:1024px;margin:-1.25rem auto 0;padding:0 1rem;display:flex;flex-direction:column;gap:1.25rem}
+
+  .today-img{position:relative;width:100%;height:210px;background:linear-gradient(160deg,#10231a,#0a1410);border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;display:grid;place-items:center}
+  .lock{font-size:56px}
+  .price-row{display:flex;flex-wrap:wrap;align-items:flex-end;gap:.75rem;margin:1rem 0}
+  .price-orig{font-size:1.05rem;font-weight:700;color:rgba(232,241,239,.45);text-decoration:line-through}
+  .price-now{font-size:1.9rem;font-weight:900;color:var(--lime);line-height:1}
+  .countdown{display:flex;gap:.5rem;margin:1rem 0}
+  .count-box{flex:1;background:rgba(4,8,11,.72);border:1px solid rgba(184,255,46,.3);border-radius:14px;padding:.55rem .2rem;text-align:center}
+  .count-num{font-size:1.45rem;font-weight:900;color:#d9ff7a;font-variant-numeric:tabular-nums}
+  .count-label{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,241,239,.5);margin-top:.2rem}
+
+  .steps li{display:flex;gap:.75rem;margin-bottom:.75rem}
+  .steps .n{width:32px;height:32px;flex-shrink:0;display:grid;place-items:center;border-radius:50%;background:rgba(184,255,46,.15);font-weight:900;font-size:.9rem;color:var(--lime)}
+  .steps b{font-size:.9rem}.steps span{display:block;font-size:.78rem;color:rgba(232,241,239,.6)}
+
+  .grid3{display:grid;grid-template-columns:1fr;gap:.75rem}
+  @media(min-width:640px){.grid3{grid-template-columns:repeat(3,1fr)}}
+
+  footer{text-align:center;padding:.5rem 1rem 1.5rem}
+  footer .brand{font-weight:900;letter-spacing:-.02em}
+  footer .admin{display:inline-block;margin-top:.75rem;font-size:.65rem;color:rgba(232,241,239,.25)}
+
+  /* Bottom nav (mobile) */
+  .bottom-nav{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(7,12,16,.95);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(16px)}
+  .bottom-nav .inner{display:flex;justify-content:space-around;padding:.5rem 0}
+  .bottom-nav a{display:flex;flex-direction:column;align-items:center;font-size:.7rem;font-weight:700;color:rgba(232,241,239,.55)}
+  .bottom-nav a.active{color:var(--lime)}
+  .bottom-nav .ico{font-size:22px;line-height:1}
+
+  /* Chat float */
+  .chat-fab{position:fixed;bottom:70px;right:16px;z-index:60}
+  .chat-fab button{width:62px;height:62px;border-radius:50%;border:none;font-size:26px;background:linear-gradient(135deg,#b8ff2e,#35e08b);box-shadow:0 12px 30px -8px rgba(184,255,46,.9);cursor:pointer;animation:pulse 2.2s infinite}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(184,255,46,.55)}70%{box-shadow:0 0 0 16px rgba(184,255,46,0)}100%{box-shadow:0 0 0 0 rgba(184,255,46,0)}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-mark">⚽</span>
+      <span>
+        <span class="logo-name">IBRAHIM VIP ZONE</span><br>
+        <span class="logo-sub">daily football multi</span>
+      </span>
+    </a>
+    <div class="header-actions">
+      <a href="#" class="btn btn-ghost btn-sm">লগইন</a>
+      <a href="#" class="btn btn-primary btn-sm">সাইন আপ</a>
+      <a href="#" class="btn btn-ghost btn-sm" style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em">⚙️ Admin</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="badge badge-ok">🔥 প্রিমিয়াম ডেইলি ফুটবল মাল্টি</span>
+    <h1>আজকের ফুটবল মাল্টি <span class="price">৳১৫৫০ মাত্র</span></h1>
+    <p>প্রতিদিন একটি করে বাছাই করা প্রিমিয়াম ফুটবল মাল্টি। সীমিত সময়ের জন্য ডিসকাউন্ট প্রাইসে।</p>
+    <div style="margin-top:.9rem;display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem">
+      <a href="#today" class="btn btn-primary">⚽ আজকের মাল্টি দেখুন</a>
+      <a href="#" class="btn btn-ghost">ফ্রি অ্যাকাউন্ট খুলুন</a>
+    </div>
+  </div>
+</section>
+
+<main>
+  <!-- Today's Multi -->
+  <section id="today" class="card neon-edge">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border-bottom:1px solid rgba(255,255,255,.08)">
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <span style="width:10px;height:10px;border-radius:50%;background:var(--lime);display:inline-block;animation:pulse-dot 1.4s infinite"></span>
+        <span class="section-title">আজকের মাল্টি</span>
+      </div>
+      <span class="badge badge-ok">LIVE NOW</span>
+    </div>
+    <div style="padding:1rem">
+      <div class="today-img">
+        <div class="lock">🔒</div>
+      </div>
+      <div class="price-row">
+        <div>
+          <span class="label" style="display:block">রেগুলার প্রাইস</span>
+          <span class="price-orig">৳৩,০০০</span>
+        </div>
+        <div>
+          <span class="label" style="display:block;color:var(--lime)">আজকের ডিসকাউন্ট প্রাইস</span>
+          <span class="price-now">৳১,৫৫০</span>
+        </div>
+        <span class="badge badge-ok" style="margin-left:auto">-৪৮% OFF</span>
+      </div>
+      <div class="countdown" id="countdown">
+        <div class="count-box"><div class="count-num" id="cd-h">০০</div><div class="count-label">ঘণ্টা</div></div>
+        <div class="count-box"><div class="count-num" id="cd-m">০০</div><div class="count-label">মিনিট</div></div>
+        <div class="count-box"><div class="count-num" id="cd-s">০০</div><div class="count-label">সেকেন্ড</div></div>
+      </div>
+      <p style="text-align:center;font-size:.7rem" class="muted">⏱ সার্ভার টাইম (Asia/Dhaka) অনুযায়ী গণনা করা হচ্ছে</p>
+      <button class="btn btn-primary" style="width:100%;margin-top:.9rem;font-size:1rem" onclick="this.innerHTML='🔒 TODAY\'S MULTI EXPIRED'">🛒 BUY TODAY'S MULTI</button>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;margin-top:.75rem;text-align:center">
+        <div class="card" style="padding:.5rem;border-radius:12px">🔒<div class="tiny muted">সিকিউর ভল্ট</div></div>
+        <div class="card" style="padding:.5rem;border-radius:12px">✅<div class="tiny muted">ম্যানুয়াল ভেরিফিকেশন</div></div>
+        <div class="card" style="padding:.5rem;border-radius:12px">💬<div class="tiny muted">২৪/৭ সাপোর্ট</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="card" style="padding:1rem">
+    <div class="section-title" style="margin-bottom:.75rem">কীভাবে কাজ করে</div>
+    <ol class="steps" style="list-style:none">
+      <li><span class="n">১</span><span><b>অ্যাকাউন্ট খুলুন</b><span>৩০ সেকেন্ডে সাইন আপ করে লগইন করুন।</span></span></li>
+      <li><span class="n">২</span><span><b>আজকের মাল্টি অর্ডার করুন</b><span>ডিসকাউন্ট প্রাইস ৳১,৫৫০ — কোনো হিডেন চার্জ নেই।</span></span></li>
+      <li><span class="n">৩</span><span><b>পেমেন্ট করুন</b><span>bKash/Nagad-এ পেমেন্ট করে Transaction ID ও Screenshot দিন।</span></span></li>
+      <li><span class="n">৪</span><span><b>Source Commission</b><span>Admin অনুমোদনের পর ৳১,৪৫০ সোর্স কমিশন ক্লিয়ার করুন।</span></span></li>
+      <li><span class="n">৫</span><span><b>Multi ডেলিভারি</b><span>দুই ধাপ অনুমোদনের পর প্রোটেক্টেড মাল্টি অটোমেটিক চ্যাটে চলে আসবে।</span></span></li>
+    </ol>
+  </section>
+
+  <!-- Pricing -->
+  <section class="grid3">
+    <div class="card" style="padding:1rem"><span class="label">মাল্টি প্রাইস</span><div style="font-size:1.4rem;font-weight:900;color:var(--lime)">৳১,৫৫০</div><div class="tiny muted" style="margin-top:.25rem">আজকের ডিসকাউন্ট প্রাইস</div></div>
+    <div class="card" style="padding:1rem"><span class="label">সোর্স কমিশন</span><div style="font-size:1.4rem;font-weight:900;color:var(--lime)">৳১,৪৫০</div><div class="tiny muted" style="margin-top:.25rem">Main payment অনুমোদনের পর</div></div>
+    <div class="card" style="padding:1rem"><span class="label">অতিরিক্ত ফি</span><div style="font-size:1.4rem;font-weight:900;color:var(--lime)">৳০</div><div class="tiny muted" style="margin-top:.25rem">কোনো হিডেন চার্জ নেই</div></div>
+  </section>
+
+  <!-- Refund / Recovery -->
+  <section class="card" style="padding:1rem">
+    <div class="section-title" style="margin-bottom:.5rem">🛡 Refund / Recovery</div>
+    <p class="tiny muted">আজকের মাল্টি লস হলে আপনি Loss Screenshot সহ Refund/Recovery রিকোয়েস্ট করতে পারবেন। Admin যাচাই করে Refund অথবা Recovery Multi অনুমোদন করবেন।</p>
+    <div style="margin-top:.75rem;padding:.75rem;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:rgba(0,0,0,.3)">
+      <b style="font-size:.85rem;color:var(--lime)">Recovery Policy</b>
+      <p class="tiny muted" style="margin-top:.25rem">Recovery অনুমোদিত হলে আপনাকে পরবর্তী Recovery Multi সম্পূর্ণ ফ্রি-তে আপনার অ্যাকাউন্টে ডেলিভারি করা হবে।</p>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section class="card" style="padding:1rem">
+    <div class="section-title" style="margin-bottom:.5rem">🎧 কাস্টমার সাপোর্ট</div>
+    <p class="tiny muted">যেকোনো সমস্যায় AI Assistant-এ মেসেজ দিন অথবা সরাসরি Admin-এর সাথে যোগাযোগ করুন।</p>
+    <div style="margin-top:.75rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem">
+      <a href="#" class="btn btn-ghost btn-sm">✈️ ইব্রাহিম ভাই</a>
+      <a href="#" class="btn btn-primary btn-sm">💬 AI Assistant</a>
+      <span class="tiny muted">🕘 প্রতিদিন সকাল ১০টা - রাত ১২টা</span>
+    </div>
+  </section>
+
+  <footer>
+    <div class="brand">IBRAHIM VIP ZONE</div>
+    <div class="tiny muted" style="margin-top:.25rem">© 2026 IBRAHIM VIP ZONE. সব তথ্য সার্ভার-সাইড ভেরিফাই করা হয়।</div>
+    <div class="tiny muted">১৮+ | দায়িত্বশীলভাবে ব্যবহার করুন। কোনো ফলাফলের নিশ্চয়তা দেওয়া হয় না।</div>
+    <a href="#" class="admin">⚙️ Admin Login</a>
+  </footer>
+</main>
+
+<!-- Floating chat -->
+<div class="chat-fab"><button onclick="alert('AI Assistant: আসসালামু আলাইকুম! 👋')">💬</button></div>
+
+<!-- Bottom navigation -->
+<nav class="bottom-nav">
+  <div class="inner">
+    <a href="#" class="active"><span class="ico">🏠</span>Home</a>
+    <a href="#"><span class="ico">📦</span>Orders</a>
+    <a href="#"><span class="ico">💬</span>Chat</a>
+    <a href="#"><span class="ico">👤</span>Account</a>
+  </div>
+</nav>
+
+<script>
+  // Countdown to end of day 22:30 Asia/Dhaka (UTC+6)
+  (function(){
+    var pad = function(n){ return (n<10?'0':'')+n; };
+    var bn = function(s){ return s.replace(/\d/g, function(d){ return '০১২৩৪৫৬৭৮৯'[d]; }); };
+    function tick(){
+      var now = new Date();
+      // Asia/Dhaka = UTC+6
+      var dhaka = new Date(now.getTime() + (now.getTimezoneOffset() + 360) * 60000);
+      var end = new Date(dhaka);
+      end.setHours(22, 30, 0, 0);
+      if (dhaka > end) end.setDate(end.getDate() + 1);
+      var diff = Math.max(0, end - dhaka);
+      var h = Math.floor(diff / 3600000);
+      var m = Math.floor(diff / 60000) % 60;
+      var s = Math.floor(diff / 1000) % 60;
+      document.getElementById('cd-h').textContent = bn(pad(h));
+      document.getElementById('cd-m').textContent = bn(pad(m));
+      document.getElementById('cd-s').textContent = bn(pad(s));
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+</script>
+</body>
+</html>

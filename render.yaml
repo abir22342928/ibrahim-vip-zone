@@ -1,0 +1,58 @@
+# ==========================================================================
+# Render Blueprint — one-click deploy for IBRAHIM VIP ZONE
+# Docs: https://render.com/docs/blueprint-spec
+# ==========================================================================
+
+services:
+  - type: web
+    name: ibrahimvipzone
+    runtime: node
+    plan: starter            # free tier; upgrade for production traffic
+    region: singapore        # closest to Bangladesh audience
+    rootDir: .               # project root (package.json lives here)
+
+    buildCommand: npm install && npm run build
+    startCommand: npm run db:push && npm start
+
+    healthCheckPath: /api/health
+
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: ADMIN_EMAIL
+        sync: false          # set in Render dashboard (secret)
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: ADMIN_NAME
+        sync: false
+      - key: ADMIN_PHONE
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        sync: false
+      - key: AI_API_KEY
+        sync: false
+      - key: AI_BASE_URL
+        sync: false
+      - key: AI_MODEL
+        sync: false
+      # DATABASE_URL is auto-injected from the database service below.
+
+    disk:
+      name: ivz-data
+      mountPath: /data
+      sizeGB: 1              # persistent disk (future-proof for file storage)
+
+  # Persistent PostgreSQL (this is what makes customers/orders/chat/vault persist)
+  - type: pserv
+    name: ibrahimvipzone-db
+    plan: starter            # free tier plan allowed: standard/nano/free
+    region: singapore
+    disk:
+      name: ivz-db-disk
+      mountPath: /var/lib/postgresql/data
+      sizeGB: 1
+    ipAllowList: []          # internal-only access from the web service
