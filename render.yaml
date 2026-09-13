@@ -2,13 +2,11 @@ services:
   - type: web
     name: ibrahimvipzone
     runtime: node
-    plan: starter
+    plan: free
     region: singapore
     rootDir: .
-
     buildCommand: npm install && npm run build
     startCommand: npm run db:push && npm start
-
     healthCheckPath: /api/health
 
     envVars:
@@ -50,12 +48,7 @@ services:
           name: ibrahimvipzone-db
           property: connectionString
 
-    disk:
-      name: ivz-data
-      mountPath: /data
-      sizeGB: 1
-
 databases:
   - name: ibrahimvipzone-db
-    plan: basic-256mb
+    plan: free
     region: singapore
